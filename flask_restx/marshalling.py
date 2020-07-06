@@ -156,8 +156,8 @@ def _marshal(data, fields, envelope=None, skip_none=False, mask=None, ordered=Fa
 
     mask = mask or getattr(fields, "__mask__", None)
     fields = getattr(fields, "resolved", fields)
-    if mask:
-        fields = apply_mask(fields, mask, skip=True)
+#     if mask:
+#         fields = apply_mask(fields, mask, skip=True)
 
     if isinstance(data, (list, tuple)):
         out = [marshal(d, fields, skip_none=skip_none, ordered=ordered) for d in data]
